@@ -1,5 +1,6 @@
 package com.LinkerNet.LinkerNet.model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,7 +23,8 @@ public class Message {
     @Setter
     private LocalDateTime timestamp;
 
-    public Message() {}
+    public Message() {
+    }
 
     public Message(String sender, String content, LocalDateTime timestamp) {
         this.sender = sender;
@@ -30,7 +32,6 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-    // Getters & setters
     public Long getId() { return id; }
     public String getSender() { return sender; }
 
@@ -38,4 +39,3 @@ public class Message {
 
     public LocalDateTime getTimestamp() { return timestamp; }
 }
-

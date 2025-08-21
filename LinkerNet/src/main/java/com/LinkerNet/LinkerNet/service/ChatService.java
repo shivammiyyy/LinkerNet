@@ -1,6 +1,7 @@
 package com.LinkerNet.LinkerNet.service;
 
 
+
 import com.LinkerNet.LinkerNet.model.Message;
 import com.LinkerNet.LinkerNet.repository.ChatRepo;
 import org.springframework.stereotype.Service;
@@ -17,16 +18,17 @@ public class ChatService {
         this.chatRepository = chatRepository;
     }
 
-    // Save a message
+    // Save a message, validating input
     public Message saveMessage(String sender, String content) {
+        if (sender == null || sender.trim().isEmpty() || content == null || content.trim().isEmpty()) {
+            throw new IllegalArgumentException("Sender and content must not be empty");
+        }
         Message message = new Message(sender, content, LocalDateTime.now());
         return chatRepository.save(message);
     }
 
-    // Fetch old messages (e.g., when someone joins)
+    // Fetch all messages (for history, etc.)
     public List<Message> getAllMessages() {
         return chatRepository.findAll();
     }
 }
-
-
