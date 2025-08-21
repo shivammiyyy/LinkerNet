@@ -161,7 +161,7 @@ LinkerNet/
 
 | Chat on Laptop                   | Chat on Mobile Browser               |
 |---------------------------------|------------------------------------|
-| !(resources/web.jpg) | !(resources/phone.jpg) |
+| ![Laptop](resources/web.jpg) | ![Mobile](resources/phone.jpg)  |
 
 ---
 
